@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bxnmvvcgrac7v"]
+
+[node name="howToPlay" type="CanvasLayer" unique_id=1190752147]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1214836921]
+offset_right = 806.0
+offset_bottom = 1077.0
+color = Color(1, 1, 1, 0.23137255)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1996787298]
+offset_left = 38.0
+offset_top = 141.0
+offset_right = 766.0
+offset_bottom = 557.0
+color = Color(0.06053029, 0.06053038, 0.060530327, 0.23137255)
+
+[node name="back" type="Button" parent="." unique_id=332095024]
+offset_left = 182.0
+offset_top = 617.0
+offset_right = 600.0
+offset_bottom = 734.0
+theme_override_font_sizes/font_size = 45
+text = "Back"
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=66879505]
+offset_top = 45.0
+offset_right = 804.0
+offset_bottom = 127.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] HOW TO PLAY:"
+
+[node name="htp" type="RichTextLabel" parent="." unique_id=1854334076]
+offset_left = 52.0
+offset_top = 150.0
+offset_right = 757.0
+offset_bottom = 548.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center] Your goal is simple: Survive.
+
+ Scavenge the environment for helpful items to increase your chances. That’s all there is to it.
+We wish you luck, you’re going to need it."

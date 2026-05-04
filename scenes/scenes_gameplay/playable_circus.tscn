@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bb601i4rlai2v"]
+
+[ext_resource type="PackedScene" uid="uid://d2ll5w4m5cqu4" path="res://scenes/scenes_gameplay/circus_1.tscn" id="1_j434v"]
+[ext_resource type="PackedScene" uid="uid://b8ncrlguyv72" path="res://player/player.tscn" id="2_tvwm0"]
+[ext_resource type="AudioStream" uid="uid://rs8d86jtkqar" path="res://assets/ingame_sounds.musics/bg_ingame.mp3" id="3_tvwm0"]
+[ext_resource type="PackedScene" uid="uid://ckr1of4favui1" path="res://shaders/in_game/camera_shader.tscn" id="4_lfi4n"]
+[ext_resource type="PackedScene" uid="uid://dmr2ybs7knqxj" path="res://scenes/models_in_game/j_4x.tscn" id="5_0jsxe"]
+[ext_resource type="AudioStream" uid="uid://dw7org804833p" path="res://assets/ingame_sounds.musics/p_chase.mp3" id="6_kork6"]
+[ext_resource type="PackedScene" uid="uid://cd5w4d3h467df" path="res://scenes/scenes_gameplay/corn_item.tscn" id="7_7311o"]
+[ext_resource type="PackedScene" uid="uid://c8mup5njprgoa" path="res://scenes/scenes_gameplay/plush.tscn" id="8_pubd7"]
+[ext_resource type="Script" uid="uid://bln7027mfatd3" path="res://scripts/gameplay/item_interaction.gd" id="9_gtpq0"]
+
+[sub_resource type="Environment" id="Environment_lfi4n"]
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0706
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pubd7"]
+size = Vector3(1.1351318, 3.831604, 1.9632263)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtpq0"]
+size = Vector3(6.5762253, 3.2299805, 2.6047363)
+
+[node name="playable_circus" type="Node3D" unique_id=2032240558]
+
+[node name="circus_1" parent="." unique_id=462649094 instance=ExtResource("1_j434v")]
+
+[node name="player" parent="." unique_id=647445697 instance=ExtResource("2_tvwm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.696793, 1.3837745, 74.08281)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=549485895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+stream = ExtResource("3_tvwm0")
+volume_db = 25.556
+autoplay = true
+max_distance = 6062.2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789153846]
+environment = SubResource("Environment_lfi4n")
+
+[node name="j4x" parent="." unique_id=840166070 node_paths=PackedStringArray("patrol_points") instance=ExtResource("5_0jsxe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 52)
+patrol_points = [NodePath("../PatrolPoints/point1"), NodePath("../PatrolPoints/point2"), NodePath("../PatrolPoints/point3"), NodePath("../PatrolPoints/point4"), NodePath("../PatrolPoints/point5")]
+
+[node name="ChaseSound" type="AudioStreamPlayer3D" parent="j4x" unique_id=931084785]
+stream = ExtResource("6_kork6")
+volume_db = 21.71
+
+[node name="PatrolPoints" type="Node3D" parent="." unique_id=1044671140]
+
+[node name="point1" type="Node3D" parent="PatrolPoints" unique_id=12873833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.58145, 0, 68.19849)
+
+[node name="point2" type="Node3D" parent="PatrolPoints" unique_id=1114237994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.89148, 0, 15.940998)
+
+[node name="point3" type="Node3D" parent="PatrolPoints" unique_id=1188895723]
+
+[node name="point4" type="Node3D" parent="PatrolPoints" unique_id=241058525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.814575, 0, -2.043419)
+
+[node name="point5" type="Node3D" parent="PatrolPoints" unique_id=1709086878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.023684, 0, -52.474712)
+
+[node name="camera_shader" parent="." unique_id=1440782911 instance=ExtResource("4_lfi4n")]
+mouse_filter = 2
+
+[node name="corn" parent="." unique_id=1441732628 instance=ExtResource("7_7311o")]
+transform = Transform3D(0.2998471, 0, 0.40011463, 0, 0.5, 0, -0.40011463, 0, 0.2998471, -15.707626, 2.0085242, -0.91423464)
+
+[node name="plush" parent="." unique_id=1635685828 instance=ExtResource("8_pubd7")]
+transform = Transform3D(-0.26096088, 0, 0.28982648, 0, 0.39, 0, -0.28982648, 0, -0.26096088, 113.85728, 1.0808007, -56.512943)
+
+[node name="item_interaction" type="Node3D" parent="." unique_id=881660465 node_paths=PackedStringArray("interaction_label")]
+script = ExtResource("9_gtpq0")
+interaction_label = NodePath("Label3D")
+
+[node name="Area3D_1" type="Area3D" parent="item_interaction" unique_id=1008653955]
+transform = Transform3D(1, 0, 0, 0, -0.518465, 0, 0, 0, 0.7457193, 113.77198, -0.21989942, -56.25495)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="item_interaction/Area3D_1" unique_id=1619344297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07765961, -0.1413796, -0.24829102)
+shape = SubResource("BoxShape3D_pubd7")
+
+[node name="Area3D_2" type="Area3D" parent="item_interaction" unique_id=1873826372]
+transform = Transform3D(0.27621984, 0, 0, 0, 0.42647076, 0, 0, 0, 0.58867943, -15.580807, 0.7443702, -0.71084607)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="item_interaction/Area3D_2" unique_id=491320963]
+transform = Transform3D(1, 0, 0, 0, 1.0000257, 0, 0, 0, 1, -0.2961197, 0.93579054, -0.77977407)
+shape = SubResource("BoxShape3D_gtpq0")
+
+[node name="Label3D" type="Label3D" parent="item_interaction" unique_id=383297452]
+visible = false
+billboard = 1
+text = "[E] Pick Item"
+
+[editable path="corn"]

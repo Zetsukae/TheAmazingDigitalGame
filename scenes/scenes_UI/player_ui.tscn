@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://8r1e4nnu7g3m"]
+
+[ext_resource type="Script" uid="uid://ctinftxwbr7bo" path="res://scripts/interface/player_ui.gd" id="1_7e4j8"]
+[ext_resource type="Texture2D" uid="uid://172c0lirn4en" path="res://assets/icons/game.png" id="3_g8hvq"]
+[ext_resource type="Texture2D" uid="uid://dnmk3b8eoencc" path="res://assets/icons/YouTube.svg" id="3_m6tp0"]
+[ext_resource type="PackedScene" uid="uid://bxnmvvcgrac7v" path="res://scenes/scenes_UI/how_to_play.tscn" id="3_suw6j"]
+[ext_resource type="Texture2D" uid="uid://dhsgjxtcikin" path="res://assets/icons/website.png" id="4_ofpgh"]
+[ext_resource type="Texture2D" uid="uid://oog0nso8f10t" path="res://assets/icons/open_source.png" id="5_wk2wm"]
+[ext_resource type="PackedScene" uid="uid://db2p6jihkvica" path="res://scenes/scenes_UI/controls.tscn" id="6_g8hvq"]
+
+[node name="player_ui" type="Control" unique_id=758992615]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7e4j8")
+link = "https://www.youtube.com/@zetsukae"
+Slink = "https://zetsukae.com/"
+Elink = "https://github.com/Zetsukae/TheAmazingDigitalGame"
+
+[node name="items" type="CanvasLayer" parent="." unique_id=1075307916]
+
+[node name="ItemLabel" type="Label" parent="items" unique_id=1756991704]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -760.0
+offset_top = -70.0
+offset_right = -19.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="howToPlay" parent="." unique_id=323524079 instance=ExtResource("3_suw6j")]
+visible = false
+
+[node name="controls" parent="." unique_id=510464603 instance=ExtResource("6_g8hvq")]
+visible = false
+layout_mode = 1
+
+[node name="pause_menu" type="CanvasLayer" parent="." unique_id=879770154]
+
+[node name="ColorRect" type="ColorRect" parent="pause_menu" unique_id=1005049331]
+offset_right = 806.0
+offset_bottom = 1077.0
+color = Color(1, 1, 1, 0.23137255)
+
+[node name="Logo" type="Sprite2D" parent="pause_menu" unique_id=1351546937]
+position = Vector2(380, 161)
+scale = Vector2(0.46601996, 0.46601993)
+texture = ExtResource("3_g8hvq")
+
+[node name="resume" type="Button" parent="pause_menu" unique_id=1838499446]
+offset_left = 153.0
+offset_top = 328.0
+offset_right = 609.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
+[node name="quit" type="Button" parent="pause_menu" unique_id=1868822558]
+offset_left = 153.0
+offset_top = 809.0
+offset_right = 609.0
+offset_bottom = 907.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="htp" type="Button" parent="pause_menu" unique_id=1322846229]
+offset_left = 1677.1646
+offset_top = 17.0
+offset_right = 1904.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 27
+text = "How to Play ?"
+
+[node name="main_menu" type="Button" parent="pause_menu" unique_id=887703344]
+offset_left = 153.0
+offset_top = 555.0
+offset_right = 609.0
+offset_bottom = 653.0
+theme_override_font_sizes/font_size = 40
+text = "Main Menu
+"
+
+[node name="controls" type="Button" parent="pause_menu" unique_id=1574079791]
+offset_left = 153.0
+offset_top = 440.0
+offset_right = 609.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 40
+text = "Controls"
+
+[node name="youtube" type="Button" parent="pause_menu" unique_id=803202290]
+offset_left = 30.0
+offset_top = 967.0
+offset_right = 270.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 25
+text = "My YouTube  "
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="pause_menu/youtube" unique_id=1691474809]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = 63.424244
+offset_bottom = 60.0
+texture = ExtResource("3_m6tp0")
+expand_mode = 1
+
+[node name="website" type="Button" parent="pause_menu" unique_id=376142601]
+offset_left = 279.0
+offset_top = 967.0
+offset_right = 519.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 25
+text = "My Website  "
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="pause_menu/website" unique_id=114632930]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 65.0
+offset_bottom = 65.0
+texture = ExtResource("4_ofpgh")
+expand_mode = 1
+
+[node name="source_code" type="Button" parent="pause_menu" unique_id=877023063]
+offset_left = 528.0
+offset_top = 967.0
+offset_right = 768.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 25
+text = "Source Code "
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="pause_menu/source_code" unique_id=1197610868]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 65.0
+offset_bottom = 65.0
+texture = ExtResource("5_wk2wm")
+expand_mode = 1
+
+[connection signal="pressed" from="howToPlay/back" to="." method="back_pressed"]
+[connection signal="pressed" from="controls/back" to="." method="back_pressed"]
+[connection signal="pressed" from="pause_menu/resume" to="." method="resume_pressed"]
+[connection signal="pressed" from="pause_menu/quit" to="." method="quit_pressed"]
+[connection signal="pressed" from="pause_menu/htp" to="." method="htp_pressed"]
+[connection signal="pressed" from="pause_menu/main_menu" to="." method="main_menu"]
+[connection signal="pressed" from="pause_menu/controls" to="." method="controls_pressed"]
+[connection signal="pressed" from="pause_menu/youtube" to="." method="youtube_button"]
+[connection signal="pressed" from="pause_menu/website" to="." method="website_button"]
+[connection signal="pressed" from="pause_menu/source_code" to="." method="source_button"]
+
+[editable path="howToPlay"]
+[editable path="controls"]

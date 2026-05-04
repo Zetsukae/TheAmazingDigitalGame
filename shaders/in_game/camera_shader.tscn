@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ckr1of4favui1"]
+
+[ext_resource type="Shader" uid="uid://bp45rulyl8jkh" path="res://shaders/in_game/camera_shader.gdshader" id="1_l78xx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5j7p"]
+shader = ExtResource("1_l78xx")
+shader_parameter/resolution_x = 725
+shader_parameter/resolution_y = 625
+shader_parameter/color_bit_depth = 4
+shader_parameter/dither_strength = 0.03
+shader_parameter/jitter_amount = 0.008
+shader_parameter/jitter_speed = 1.2
+shader_parameter/jitter_frequency = 180.0
+shader_parameter/chromatic_aberration_strength = 0.015
+shader_parameter/vignette_strength = 0.8
+shader_parameter/vignette_radius = 0.9
+
+[node name="camera_shader" type="Control" unique_id=1440782911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vhs" type="ColorRect" parent="." unique_id=82266346]
+material = SubResource("ShaderMaterial_p5j7p")
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1079.0
+mouse_filter = 2

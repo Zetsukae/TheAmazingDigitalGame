@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b8ncrlguyv72"]
+
+[ext_resource type="Script" uid="uid://cfhystvblibet" path="res://scripts/gameplay/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://cuhy3yb6j6kyh" path="res://scripts/gameplay/first_pCam.gd" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://8r1e4nnu7g3m" path="res://scenes/scenes_UI/player_ui.tscn" id="3_g1dw6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rkbax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1dw6"]
+bg_color = Color(0.39765328, 0.32373375, 0.27396813, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.20784314, 0.20784314, 0.20784314, 0)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="player" type="CharacterBody3D" unique_id=647445697 groups=["Player"]]
+wall_min_slide_angle = 1.1711159
+script = ExtResource("1_oul6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=675915405]
+shape = SubResource("CapsuleShape3D_oul6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=559128636]
+mesh = SubResource("CapsuleMesh_rkbax")
+
+[node name="head" type="Node3D" parent="." unique_id=1230090047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8569935, 0)
+script = ExtResource("2_rkbax")
+
+[node name="Camera3D" type="Camera3D" parent="head" unique_id=817951416]
+fov = 60.0
+
+[node name="InteractionRay" type="RayCast3D" parent="head/Camera3D" unique_id=188679755]
+target_position = Vector3(0, 0, -2)
+
+[node name="Hand" type="Node3D" parent="head/Camera3D" unique_id=956668204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5654428, -0.41599447, -1.0692847)
+
+[node name="player_ui" parent="." unique_id=758992615 instance=ExtResource("3_g1dw6")]
+
+[node name="StaminaBar" type="ProgressBar" parent="." unique_id=716814901]
+offset_left = 811.0
+offset_top = 1029.0
+offset_right = 1126.0
+offset_bottom = 1074.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_g1dw6")
+value = 100.0
+show_percentage = false
+
+[editable path="player_ui"]
+[editable path="player_ui/howToPlay"]
+[editable path="player_ui/controls"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://koxi7v5n7kkc"]
+
+[ext_resource type="Script" uid="uid://xacq2lu23gds" path="res://scripts/interface/gamedev_intro.gd" id="1_7wbsc"]
+[ext_resource type="VideoStream" uid="uid://cgllux5o14rvb" path="res://assets/bg_video/game_intro.ogv" id="1_wmtge"]
+
+[node name="gamedev_intro" type="Control" unique_id=1116578747]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7wbsc")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1862270148]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_wmtge")
+volume_db = 23.999998
+autoplay = true

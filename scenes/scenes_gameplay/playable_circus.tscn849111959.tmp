@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bb601i4rlai2v"]
+
+[ext_resource type="PackedScene" uid="uid://d2ll5w4m5cqu4" path="res://scenes/scenes_gameplay/circus_1.tscn" id="1_j434v"]
+[ext_resource type="PackedScene" uid="uid://b8ncrlguyv72" path="res://player/player.tscn" id="2_tvwm0"]
+[ext_resource type="AudioStream" uid="uid://rs8d86jtkqar" path="res://assets/ingame_sounds.musics/bg_ingame.mp3" id="3_tvwm0"]
+[ext_resource type="PackedScene" uid="uid://ckr1of4favui1" path="res://shaders/in_game/camera_shader.tscn" id="4_lfi4n"]
+[ext_resource type="PackedScene" uid="uid://3eu8pxa7ftmc" path="res://scenes/models_in_game/j_4x_animations.tscn" id="5_0jsxe"]
+
+[sub_resource type="Environment" id="Environment_lfi4n"]
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0706
+
+[node name="playable_circus" type="Node3D" unique_id=2032240558]
+
+[node name="circus_1" parent="." unique_id=462649094 instance=ExtResource("1_j434v")]
+
+[node name="player" parent="." unique_id=647445697 instance=ExtResource("2_tvwm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.696793, 1.3837745, 74.08281)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=549485895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+stream = ExtResource("3_tvwm0")
+autoplay = true
+max_distance = 6062.2
+
+[node name="camera_shader" parent="." unique_id=1440782911 instance=ExtResource("4_lfi4n")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789153846]
+environment = SubResource("Environment_lfi4n")
+
+[node name="J4xAnimations" parent="." unique_id=1732816017 node_paths=PackedStringArray("target") instance=ExtResource("5_0jsxe")]
+target = NodePath("../player")
+speed_wander = null
+speed_chase = null

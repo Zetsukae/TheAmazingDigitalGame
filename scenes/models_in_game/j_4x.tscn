@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dmr2ybs7knqxj"]
+
+[ext_resource type="PackedScene" uid="uid://3eu8pxa7ftmc" path="res://scenes/models_in_game/j_4x_animations.tscn" id="1_ndasq"]
+[ext_resource type="Script" uid="uid://dg0vq44gecllb" path="res://scripts/gameplay/j_4x_animations.gd" id="1_x7sb3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7sb3"]
+radius = 0.27539063
+height = 2.4013672
+
+[node name="j4x" type="CharacterBody3D" unique_id=840166070]
+script = ExtResource("1_x7sb3")
+
+[node name="J4xAnimations" parent="." unique_id=1732816017 instance=ExtResource("1_ndasq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="jumpscare" parent="J4xAnimations" index="1" unique_id=390297977]
+visible = false
+
+[node name="RayCast3D" parent="J4xAnimations" index="5" unique_id=1068970350]
+target_position = Vector3(0, -13.09, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=585425946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2145872, 0)
+shape = SubResource("CapsuleShape3D_x7sb3")
+
+[editable path="J4xAnimations"]

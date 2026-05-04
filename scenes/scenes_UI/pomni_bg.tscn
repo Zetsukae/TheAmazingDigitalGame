@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cpf6lsweqjnix"]
+
+[ext_resource type="PackedScene" uid="uid://d4nhlqp3hgc84" path="res://models/characters/pomni_low_poly_model.glb" id="1_p17x7"]
+[ext_resource type="Script" uid="uid://nucwpe57ex2k" path="res://scripts/interface/main_menu/pomni_bg.gd" id="2_535eq"]
+
+[node name="pomni_bg" unique_id=1103340284 instance=ExtResource("1_p17x7")]
+script = ExtResource("2_535eq")
+
+[node name="Skeleton3D" parent="Sketchfab_model/root/GLTF_SceneRootNode/Armature_62/GLTF_created_0" parent_id_path=PackedInt32Array(666208445) index="0" unique_id=2009797969]
+bones/2/position = Vector3(0, 2.2695167, 0)
+bones/5/position = Vector3(-0.0015410335, -0.0077101244, 0.14604181)
+bones/13/rotation = Quaternion(-0.179236, 0.1807565, -0.7123439, 0.65403956)
+bones/16/rotation = Quaternion(0.026069745, -0.033900887, -0.09697489, 0.9943677)
+bones/17/rotation = Quaternion(0.6827809, -0.6724699, 0.26101077, -0.116051316)
+bones/20/rotation = Quaternion(0.10827562, 0.060360912, 0.008743082, 0.99224824)
+bones/21/position = Vector3(0.8998554, 1.0388969, -0.14509869)
+bones/22/rotation = Quaternion(-0.823833, 0.21446314, 0.076579586, 0.5190765)
+bones/23/rotation = Quaternion(-0.110452026, 0.6243435, -0.22594644, 0.7395565)
+bones/32/position = Vector3(-0.9104805, 0.80354935, -0.072102696)
+bones/33/rotation = Quaternion(-0.73006916, -0.047243066, -0.22391565, 0.64391685)
+bones/34/rotation = Quaternion(-0.4412278, -0.47599941, 0.016983788, 0.76056176)
+bones/43/position = Vector3(0.44497567, 2.1043334, 2.3197957e-08)
+bones/43/rotation = Quaternion(0.8141465, -0.055963453, 0.50879264, 0.2741598)
+bones/44/rotation = Quaternion(0.47918156, -0.005861973, 0.04083606, 0.8767457)
+bones/46/position = Vector3(-0.45018044, 2.1043334, 2.319796e-08)
+bones/46/rotation = Quaternion(0.80752045, 0.08261536, -0.54195434, 0.21764922)
+bones/47/rotation = Quaternion(0.47122887, 0.0028069753, -0.01745405, 0.88183385)
+bones/48/rotation = Quaternion(-0.853259, 0.013634952, -0.01998765, 0.5209258)
+
+[node name="Object_93" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_63" parent_id_path=PackedInt32Array(1237584103) index="0" unique_id=1970065365]
+visible = false
+
+[node name="Object_94" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_63" parent_id_path=PackedInt32Array(1237584103) index="1" unique_id=1646500670]
+visible = false
